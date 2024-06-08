@@ -1,0 +1,544 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "Ancestor Reborn",
+   LoadingTitle = "Reborn real",
+   LoadingSubtitle = "by vicyunnn",
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Reborn scirpt hub"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+   KeySystem = false, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Untitled",
+      Subtitle = "Key System",
+      Note = "No method of obtaining the key is provided",
+      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+local MainTab = Window:CreateTab("cheats", 4483362458) -- Title, Image
+local MainSection = MainTab:CreateSection("Main")
+
+Rayfield:Notify({
+   Title = "Have fun",
+   Content = "this is useful",
+   Duration = 5,
+   Image = 4483362458,
+   Actions = { -- Notification Buttons
+      Ignore = {
+         Name = "Okay!",
+         Callback = function()
+         print("The user tapped Okay!")
+      end
+   },
+},
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Fly",
+   Callback = function()
+            game.Players.LocalPlayer.Character.Freecam.Enabled = true
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Stand On Outlands",
+   Callback = function()
+            for i,v in game:GetService("ReplicatedStorage"):FindFirstChild("Districts"):GetChildren() do
+    if v:isA("Folder") then
+        if v:GetAttribute("OffLimits") == true then
+            v:SetAttribute("OffLimits", false)
+        end
+    end
+end
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Premium Gamepasses",
+   Callback = function()
+local plrName = game.Players.LocalPlayer.Name
+local PlrDTFolder = game.ReplicatedStorage.PlayerData:FindFirstChild(plrName)
+local premium = PlrDTFolder:FindFirstChild("Premium")
+
+for i, v in premium:GetChildren() do
+    local IR = v:FindFirstChild("InfiniteRespawn")
+    local RD = v:FindFirstChild("Radar")
+
+    if IR then
+        IR.Value = true
+    end
+
+    if RD then
+        RD.Value = true
+    end
+end
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local MainTab = Window:CreateTab("Gear", 4483362458) -- Title, Image
+
+local MainSection = MainTab:CreateSection("Grappler")
+
+local Button = MainTab:CreateButton({
+   Name = "Base Grappler",
+   Callback = function()
+            local plrName = game.Players.LocalPlayer.Name
+local PlrRTDFolder = game.ReplicatedStorage.PlayerRuntimeData:FindFirstChild(plrName)
+
+for i, v in PlrRTDFolder.Inventory:GetChildren() do
+    if v:GetAttribute("Name") == "Grappler" then
+        v:SetAttribute("Level",0)
+         v:SetAttribute("Tree", 0)           
+    end
+end
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local MainSection = MainTab:CreateSection("Yank Grappler")
+
+ local Button = MainTab:CreateButton({
+   Name = "Yank Grappler lv 1",
+   Callback = function()
+            local plrName = game.Players.LocalPlayer.Name
+local PlrRTDFolder = game.ReplicatedStorage.PlayerRuntimeData:FindFirstChild(plrName)
+
+for i, v in PlrRTDFolder.Inventory:GetChildren() do
+    if v:GetAttribute("Name") == "Grappler" then
+        v:SetAttribute("Level", 1)
+         v:SetAttribute("Tree", 1)           
+    end
+end
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Yank Grappler lv 2",
+   Callback = function()
+            local plrName = game.Players.LocalPlayer.Name
+local PlrRTDFolder = game.ReplicatedStorage.PlayerRuntimeData:FindFirstChild(plrName)
+
+for i, v in PlrRTDFolder.Inventory:GetChildren() do
+    if v:GetAttribute("Name") == "Grappler" then
+        v:SetAttribute("Level", 2)
+         v:SetAttribute("Tree", 1)           
+    end
+end
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Yank Grappler lv 3",
+   Callback = function()
+            local plrName = game.Players.LocalPlayer.Name
+local PlrRTDFolder = game.ReplicatedStorage.PlayerRuntimeData:FindFirstChild(plrName)
+
+for i, v in PlrRTDFolder.Inventory:GetChildren() do
+    if v:GetAttribute("Name") == "Grappler" then
+        v:SetAttribute("Level", 3)
+         v:SetAttribute("Tree", 1)           
+    end
+end
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local MainSection = MainTab:CreateSection("Swing Grappler")
+
+local Button = MainTab:CreateButton({
+   Name = "Swing Grappler lv 1",
+   Callback = function()
+            local plrName = game.Players.LocalPlayer.Name
+local PlrRTDFolder = game.ReplicatedStorage.PlayerRuntimeData:FindFirstChild(plrName)
+
+for i, v in PlrRTDFolder.Inventory:GetChildren() do
+    if v:GetAttribute("Name") == "Grappler" then
+        v:SetAttribute("Level", 1)
+         v:SetAttribute("Tree", 2)           
+    end
+end
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Swing Grappler lv 2",
+   Callback = function()
+            local plrName = game.Players.LocalPlayer.Name
+local PlrRTDFolder = game.ReplicatedStorage.PlayerRuntimeData:FindFirstChild(plrName)
+
+for i, v in PlrRTDFolder.Inventory:GetChildren() do
+    if v:GetAttribute("Name") == "Grappler" then
+        v:SetAttribute("Level", 2)
+         v:SetAttribute("Tree", 2)           
+    end
+end
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Swing Grappler lv 3",
+   Callback = function()
+            local plrName = game.Players.LocalPlayer.Name
+local PlrRTDFolder = game.ReplicatedStorage.PlayerRuntimeData:FindFirstChild(plrName)
+
+for i, v in PlrRTDFolder.Inventory:GetChildren() do
+    if v:GetAttribute("Name") == "Grappler" then
+        v:SetAttribute("Level", 3)
+         v:SetAttribute("Tree", 2)           
+    end
+end
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local MainSection = MainTab:CreateSection("Glove")
+
+local Button = MainTab:CreateButton({
+   Name = "Base Glove",
+   Callback = function()
+            local plrName = game.Players.LocalPlayer.Name
+local PlrRTDFolder = game.ReplicatedStorage.PlayerRuntimeData:FindFirstChild(plrName)
+
+for i, v in PlrRTDFolder.Inventory:GetChildren() do
+    if v:GetAttribute("Name") == "Glove" then
+        v:SetAttribute("Level",0)
+         v:SetAttribute("Tree", 0)           
+    end
+end
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local MainSection = MainTab:CreateSection("Drifter Glove")
+
+local Button = MainTab:CreateButton({
+   Name = "Drifter lv 1",
+   Callback = function()
+            local plrName = game.Players.LocalPlayer.Name
+local PlrRTDFolder = game.ReplicatedStorage.PlayerRuntimeData:FindFirstChild(plrName)
+
+for i, v in PlrRTDFolder.Inventory:GetChildren() do
+    if v:GetAttribute("Name") == "Glove" then
+        v:SetAttribute("Level", 1)
+         v:SetAttribute("Tree", 2)           
+    end
+end
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Drifter lv 2",
+   Callback = function()
+            local plrName = game.Players.LocalPlayer.Name
+local PlrRTDFolder = game.ReplicatedStorage.PlayerRuntimeData:FindFirstChild(plrName)
+
+for i, v in PlrRTDFolder.Inventory:GetChildren() do
+    if v:GetAttribute("Name") == "Glove" then
+        v:SetAttribute("Level", 2)
+         v:SetAttribute("Tree", 2)           
+    end
+end
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local MainSection = MainTab:CreateSection("Climber Glove")
+
+local Button = MainTab:CreateButton({
+   Name = "Climber lv 1",
+   Callback = function()
+            local plrName = game.Players.LocalPlayer.Name
+local PlrRTDFolder = game.ReplicatedStorage.PlayerRuntimeData:FindFirstChild(plrName)
+
+for i, v in PlrRTDFolder.Inventory:GetChildren() do
+    if v:GetAttribute("Name") == "Glove" then
+        v:SetAttribute("Level", 1)
+         v:SetAttribute("Tree", 1)           
+    end
+end
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Climber lv 2",
+   Callback = function()
+            local plrName = game.Players.LocalPlayer.Name
+local PlrRTDFolder = game.ReplicatedStorage.PlayerRuntimeData:FindFirstChild(plrName)
+
+for i, v in PlrRTDFolder.Inventory:GetChildren() do
+    if v:GetAttribute("Name") == "Glove" then
+        v:SetAttribute("Level", 2)
+         v:SetAttribute("Tree", 1)           
+    end
+end
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local MainSection = MainTab:CreateSection("Zipline Hook")
+
+local Button = MainTab:CreateButton({
+   Name = "Base Zipline Hook",
+   Callback = function()
+            local plrName = game.Players.LocalPlayer.Name
+local PlrRTDFolder = game.ReplicatedStorage.PlayerRuntimeData:FindFirstChild(plrName)
+
+for i, v in PlrRTDFolder.Inventory:GetChildren() do
+    if v:GetAttribute("Name") == "ZiplineHook" then
+        v:SetAttribute("Level", 0)
+         v:SetAttribute("Tree", 0)           
+    end
+end
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local MainSection = MainTab:CreateSection("Mechanized Zipline Hook")
+
+local Button = MainTab:CreateButton({
+   Name = "Mechanized Zipline Hook lv 1",
+   Callback = function()
+            local plrName = game.Players.LocalPlayer.Name
+local PlrRTDFolder = game.ReplicatedStorage.PlayerRuntimeData:FindFirstChild(plrName)
+
+for i, v in PlrRTDFolder.Inventory:GetChildren() do
+    if v:GetAttribute("Name") == "ZiplineHook" then
+        v:SetAttribute("Level", 1)
+         v:SetAttribute("Tree", 1)           
+    end
+end
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Mechanized Zipline Hook lv 2",
+   Callback = function()
+            local plrName = game.Players.LocalPlayer.Name
+local PlrRTDFolder = game.ReplicatedStorage.PlayerRuntimeData:FindFirstChild(plrName)
+
+for i, v in PlrRTDFolder.Inventory:GetChildren() do
+    if v:GetAttribute("Name") == "ZiplineHook" then
+        v:SetAttribute("Level", 2)
+         v:SetAttribute("Tree", 1)           
+    end
+end
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local MainTab = Window:CreateTab("Teleports", 4483362458) -- Title, Image
+local MainSection = MainTab:CreateSection("Downtown")
+
+local Button = MainTab:CreateButton({
+   Name = "Spawn",
+   Callback = function()
+   -- Settings
+local Location = CFrame.new(3743.47974, 318.043854, -78.7720337)
+
+-- Services
+local Players = game:GetService("Players")
+
+-- Variables
+local LocalPlayer: Player = Players.LocalPlayer
+local Character: Model = LocalPlayer.Character
+local RootPart: Part = Character.HumanoidRootPart
+
+-- Functions
+function Teleport(Location: CFrame)
+    
+    RootPart.CFrame = Location
+
+end
+
+-- Code
+Teleport(Location)
+
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Apollo",
+   Callback = function()
+   -- Settings
+local Location = CFrame.new(2806.08374, 908.638184, 1128.48157)
+
+-- Services
+local Players = game:GetService("Players")
+
+-- Variables
+local LocalPlayer: Player = Players.LocalPlayer
+local Character: Model = LocalPlayer.Character
+local RootPart: Part = Character.HumanoidRootPart
+
+-- Functions
+function Teleport(Location: CFrame)
+    
+    RootPart.CFrame = Location
+
+end
+
+-- Code
+Teleport(Location)
+
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Vertigo",
+   Callback = function()
+   -- Settings
+local Location = CFrame.new(3588.84399, 1277.78223, -397.412933)
+
+-- Services
+local Players = game:GetService("Players")
+
+-- Variables
+local LocalPlayer: Player = Players.LocalPlayer
+local Character: Model = LocalPlayer.Character
+local RootPart: Part = Character.HumanoidRootPart
+
+-- Functions
+function Teleport(Location: CFrame)
+    
+    RootPart.CFrame = Location
+
+end
+
+-- Code
+Teleport(Location)
+
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "GL Tower",
+   Callback = function()
+   -- Settings
+local Location = CFrame.new(2570.59717, 660.894714, -325.327881)
+
+-- Services
+local Players = game:GetService("Players")
+
+-- Variables
+local LocalPlayer: Player = Players.LocalPlayer
+local Character: Model = LocalPlayer.Character
+local RootPart: Part = Character.HumanoidRootPart
+
+-- Functions
+function Teleport(Location: CFrame)
+    
+    RootPart.CFrame = Location
+
+end
+
+-- Code
+Teleport(Location)
+
+   end,
+})
+
+local MainSection = MainTab:CreateSection("Dirwik")
+
+local Button = MainTab:CreateButton({
+   Name = "PRK Tech",
+   Callback = function()
+   -- Settings
+local Location = CFrame.new(1951.85693, 536.513611, -36.5253258)
+
+-- Services
+local Players = game:GetService("Players")
+
+-- Variables
+local LocalPlayer: Player = Players.LocalPlayer
+local Character: Model = LocalPlayer.Character
+local RootPart: Part = Character.HumanoidRootPart
+
+-- Functions
+function Teleport(Location: CFrame)
+    
+    RootPart.CFrame = Location
+
+end
+
+-- Code
+Teleport(Location)
+
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Artemis",
+   Callback = function()
+   -- Settings
+local Location = CFrame.new(1786.06042, 1748.91895, 1670.724)
+
+-- Services
+local Players = game:GetService("Players")
+
+-- Variables
+local LocalPlayer: Player = Players.LocalPlayer
+local Character: Model = LocalPlayer.Character
+local RootPart: Part = Character.HumanoidRootPart
+
+-- Functions
+function Teleport(Location: CFrame)
+    
+    RootPart.CFrame = Location
+
+end
+
+-- Code
+Teleport(Location)
+
+   end,
+})
+
+local MainSection = MainTab:CreateSection("NPCs")
+
+local Button = MainTab:CreateButton({
+   Name = "Petra",
+   Callback = function()
+   -- Settings
+local Location = CFrame.new(1679.29858, 652.152283, -1.57595384)
+
+-- Services
+local Players = game:GetService("Players")
+
+-- Variables
+local LocalPlayer: Player = Players.LocalPlayer
+local Character: Model = LocalPlayer.Character
+local RootPart: Part = Character.HumanoidRootPart
+
+-- Functions
+function Teleport(Location: CFrame)
+    
+    RootPart.CFrame = Location
+
+end
+
+-- Code
+Teleport(Location)
+
+   end,
+})
